@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+{% block head_title %}{{block.super}}{{object.name }}{% endblock %}
+
+
+{% block content %}
+	<div class="row">
+		<h4 style="text-align: center;">{{ object.name }}</h4>
+			<div id="gallery">
+				<ul class="clearing-thumbs" data-clearing>
+			 		{% for photo in object.all_files.all %}
+						<li style="list-style: none;">
+							<a class="th" href="{{ photo.url }}">
+								<img src="{% thumbnail photo 177x180 crop %}" data-caption="{{ photo.default_caption }}"/> 
+							</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+	</div>
+{% endblock %}

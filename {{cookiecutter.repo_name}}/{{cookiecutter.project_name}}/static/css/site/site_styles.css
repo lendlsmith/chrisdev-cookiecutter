@@ -9,6 +9,19 @@ i {padding-right: 5px;}
 li.social {list-style: none;padding-top: 8px;text-align: center;}
 .fc-webicon.medium {height: 25px;width: 25px;}
 
+
+/*---GALLERY---*/
+
+#gallery {padding: 1px 11px;}
+#gallery li {list-style: none;float: left;margin-right: 10px;margin-bottom: 15px;}
+#gallery .th { border: 0;border-radius: 8px;padding: 5px;}
+#gallery .th img { border-radius: 5px; background: #fff;}
+#gallery h6 {text-decoration: none;text-align: center;font-variant: normal;margin-top: 1px;}
+#gallery h6 a {color: #08C;}
+
+/*---END GALLERY----*/
+
+
 /*---FOOTER---*/
 
 footer {background: #646464;padding: 20px 10px 0;list-style: none;margin-top: -10px;}

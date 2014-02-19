@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+{% block head_title %}Photo Gallery{% endblock %}
+
+{% block content %}
+	<div id="gallery" class="row">
+		<h3 style="text-align: center;">Photo Gallery</h3>
+			{% for gallery in object_list %}
+				{% for photo in gallery.all_files.all|slice:":1" %}
+					<li>
+						<a class="th" href="/photos/gallery/{{ gallery.pk}}" title="">
+							<img src="{% thumbnail photo 177x177 crop %}" alt="{{ photo.title }}" title="{{ photo.default_caption }}"/>
+						</a>
+						<h6 style="text-align: center;">
+							<a href="/photos/gallery/{{ gallery.pk }}">
+								{{ gallery.name|slice:"20" }}
+							</a>
+						</h6>
+					</li>
+			{% endfor %}
+		{% endfor %}
+	</div>
+{% endblock %}

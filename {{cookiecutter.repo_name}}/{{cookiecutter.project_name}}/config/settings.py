@@ -34,8 +34,8 @@ class Common(Configuration):
     THIRD_PARTY_APPS = (
     	'django_generic_flatblocks',
     	'easy_thumbnails',
-    	'flatpages_filer',
-    	'filer',
+    	#'flatpages_filer',
+    	#'filer',
         'frontendadmin',
         'markitup',
         'south',   
@@ -44,7 +44,8 @@ class Common(Configuration):
     LOCAL_APPS = (
         'users',
         'utils',
-        'slider',   
+        #'photos',
+        #'slider',   
     )
 
     INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
