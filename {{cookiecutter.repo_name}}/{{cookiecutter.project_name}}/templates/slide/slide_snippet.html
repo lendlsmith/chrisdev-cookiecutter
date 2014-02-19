@@ -1,0 +1,15 @@
+{% load i18n %}
+{% load thumbnail %}
+
+<div class="orbit-container large-12 columns">
+	
+	  <ul data-orbit="">
+	    {% for slide in slide_list %}
+	    <li style="list-style: none;">
+	      <a href="{{ slide.get_absolute_url }}">
+	          <img src="{% thumbnail slide.slide_image 1000x380 crop %}"  data-caption="#slide-{{ slide.pk }}" alt="{{ slide.caption }}">
+	      </a>
+	    </li>
+	    {% endfor %}
+	  </ul>
+</div>

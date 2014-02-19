@@ -23,6 +23,7 @@ class Common(Configuration):
         'django.contrib.messages',
         'django.contrib.staticfiles',
         'django.contrib.flatpages',
+        'django_generic_flatblocks.contrib.gblocks',
 
         # 'django.contrib.humanize',
 
@@ -31,16 +32,19 @@ class Common(Configuration):
     )
     
     THIRD_PARTY_APPS = (
-        'south',
-        'filer',
-        'flatpages_filer',
+    	'django_generic_flatblocks',
+    	'easy_thumbnails',
+    	'flatpages_filer',
+    	'filer',
+        'frontendadmin',
         'markitup',
-        'easy_thumbnails',
+        'south',   
     )
 
     LOCAL_APPS = (
         'users',
-        'utils', 
+        'utils',
+        'slider',   
     )
 
     INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

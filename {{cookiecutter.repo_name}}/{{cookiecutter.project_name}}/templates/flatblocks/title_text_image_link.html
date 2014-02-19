@@ -1,0 +1,22 @@
+{% load frontendadmin_tags %}
+
+{% if user.is_staff %}
+	{% frontendadmin_change object %}
+	{% frontendadmin_delete object %}
+{% endif %}
+
+{% if object.title %}
+	<h5 style="text-align: center;">{{object.title}}</h5>
+{% endif %}
+
+{% if object.image %}
+	<img src="{{ object.image.url }}" alt="{{object.title}}"/>
+{% endif %}
+
+{% if object.text %}
+	{{object.text|safe}}
+{% endif %}
+
+{% if object.url %}
+	<a href="{{object.url}}" style="float: right;" class="button small radius">Read More &raquo;</a>
+{% endif %}

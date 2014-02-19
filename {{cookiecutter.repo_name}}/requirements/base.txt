@@ -31,9 +31,11 @@ django-autoslug==1.7.2
 
 # Your custom git requirements go here
 git+https://github.com/chrisdev/django-flatpages-filer.git
+git+https://github.com/ilendl2/django-frontendadmin.git
 
 # Your custom requirements go here
 django-filer==0.9.5
+django-generic-flatblocks==0.9.1
 django-markitup==2.1
 easy-thumbnails==1.4
 Markdown==2.4

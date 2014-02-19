@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block head_title %}{{slide.title}}{% endblock %}
+
+{% block content %}
+	<div class="row">
+	    <div class="large-12 columns">
+	        	        
+	        <h4 style="margin-bottom: 5px; margin-top: 0;">{{slide.title}}</h4>
+			
+			<img src="{{ slide.slide_image.url }}" alt="" />
+			
+			<p>{{slide.body|safe}}</p>
+			
+		</div>
+    </div>
+{% endblock %}

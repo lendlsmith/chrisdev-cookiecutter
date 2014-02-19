@@ -13,11 +13,17 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Hompage
     url(r'^$',TemplateView.as_view(template_name='homepage.html'),name="home"),
+    
     # Admin
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^frontendadmin/', include('frontendadmin.urls')),
+    url(r'^markitup/', include('markitup.urls')),
+    
     # Apps
     url(r'^users/', include("users.urls", namespace="users")),
     url(r'^accounts/', include('allauth.urls')),
+    url(r'^slide/', include('slider.urls')),
+    
     # Custom Pages
 
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
