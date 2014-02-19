@@ -22,6 +22,7 @@ class Common(Configuration):
         'django.contrib.sites',
         'django.contrib.messages',
         'django.contrib.staticfiles',
+        'django.contrib.flatpages',
 
         # 'django.contrib.humanize',
 
@@ -31,6 +32,10 @@ class Common(Configuration):
     
     THIRD_PARTY_APPS = (
         'south',
+        'filer',
+        'flatpages_filer',
+        'markitup',
+        'easy_thumbnails',
     )
 
     LOCAL_APPS = (
@@ -55,8 +60,16 @@ class Common(Configuration):
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         'django.contrib.messages.middleware.MessageMiddleware',
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
     )
     ########## END MIDDLEWARE CONFIGURATION
+    
+    
+    ########### MARKITUP 
+    MARKITUP_SET = 'markitup/sets/markdown'
+    MARKITUP_SKIN = 'markitup/skins/markitup'
+    MARKITUP_FILTER = ('markdown.markdown', {'safe_mode': True})
+	########### END MARKITUP
 
    
     ########## DEBUG
