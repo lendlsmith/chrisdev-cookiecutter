@@ -10,13 +10,10 @@ Features
 
 * For Django 1.6
 * Foundation 5
-* AngularJS
 * Settings management via django-configurations
 * Registration via django-allauth
-* User avatars via django-avatar
 * Procfile for deploying to Heroku
 * Heroku optimized requirements
-* Basic caching setup
 * Grunt build for compass and livereload
 
 Constraints
@@ -54,8 +51,8 @@ It prompts you for questions. Answer them::
     remote: Total 550 (delta 283), reused 479 (delta 222)
     Receiving objects: 100% (550/550), 127.66 KiB | 58 KiB/s, done.
     Resolving deltas: 100% (283/283), done.
-    project_name (default is "project_name")? redditclone
-    repo_name (default is "repo_name")? redditclone
+    project_name (default is "project_name")? cookiecutter_project
+    repo_name (default is "repo_name")? cookiecutter_repo
     author_name (default is "Your Name")? Lendl Smith
     email (default is "Your email")? lendl.smith@gmail.com
     description (default is "A short description of the project.")? A reddit clone.
@@ -65,7 +62,7 @@ It prompts you for questions. Answer them::
 
 Enter the project and take a look around::
 
-    $ cd redditclone/
+    $ cd cookiecutter_project/
     $ ls
 
 Create a GitHub repo and push it there::
@@ -73,7 +70,7 @@ Create a GitHub repo and push it there::
     $ git init
     $ git add .
     $ git commit -m "first awesome commit"
-    $ git remote add origin git@github.com:ilendl2/redditclone.git
+    $ git remote add origin git@github.com:ilendl2/cookiecutter_project.git
     $ git push -u origin master
 
 Now take a look at your repo. Don't forget to carefully look at the generated README. Awesome, right?
@@ -95,9 +92,6 @@ You can now run the usual Django ``runserver`` command (replace ``yourapp`` with
 
     $ python yourapp/manage.py runserver
 
-The base app will run but you'll need to carry out a few steps to make the sign-up and login forms work. These are currently detailed in `issue #39`_.
-
-.. _issue #39: https://github.com/pydanny/chrisdev-cookiecutter/issues/39
 
 **Live reloading and Sass CSS compilation**
 
