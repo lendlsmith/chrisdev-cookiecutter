@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block head_title %}Page Cannot Be Found{% endblock %}
+
+{% block content %}
+    <div class="large-8 large-centered columns" style="text-align: center;">
+        <h3>Page Not Found</h3>
+            <div class="large-8 large-centered columns">
+            	<img src="{{STATIC_URL}}images/404.png" >
+            </div>
+        <h4>Sorry we cannot find the page you are looking for.</h4>
+        <h5>Click <a href="/" style="color: #08C;">here</a> to return</h5>
+    </div>
+{% endblock %}

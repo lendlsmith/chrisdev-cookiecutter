@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}User: {{ object.username }}{% endblock %}
+
+{% block content %}
+    <div class="row">
+      <div class="large-6 large-centered columns">
+          <div class="panel radius">
+              {% if object == request.user %}
+                  <h3>{{ object.username }}</h3>
+              
+                  <h6><strong>First Name:</strong> {{ object.first_name }}</h6>
+                  <h6><strong>Last Name:</strong> {{ object.last_name }}</h6>
+              
+                  <div class="row">
+                      <a class="button tiny radius" href="{% url 'users:update' %}">My Info</a>
+                      <a class="button tiny radius" href="{% url 'account_email' %}">E-Mail</a>
+                  </div>
+              {% else %}
+                  <h4 style="text-align: center;">Page Not Found</h4>
+                      <div class="large-8 large-centered columns">
+                      	<img src="{{STATIC_URL}}images/404.png" >
+                      </div>
+                  <h5 style="text-align: center;">Sorry we cannot find the page you are looking for.</h5>
+                  <h6 style="text-align: center;">Click <a href="{% url 'users:detail' request.user.username  %}" style="color: #3498db;">here</a> to return to your profile.</h6>
+              {% endif %}
+          </div>
+      </div>
+    </div>
+{% endblock %}

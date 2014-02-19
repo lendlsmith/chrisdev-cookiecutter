@@ -1,0 +1,75 @@
+{% load staticfiles i18n %}
+
+<html lang="en" ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{{ cookiecutter.project_name }}{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+
+    {% block css %}
+    <link href="{% static 'css/foundation.css' %}" rel="stylesheet">
+    <link href="{% static 'css/foundation-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'css/fc-webicons.css' %}" rel="stylesheet">
+    <link href="{% static 'css/site/site_styles.css' %}" rel="stylesheet">
+    {% endblock %}
+    <script src="{% static 'js/vendor/modernizr.js' %}"></script>
+  </head>
+
+  <body>
+
+    {% block topbar %}
+        <div class="contain-to-grid sticky">
+            <nav class="top-bar" data-topbar>
+            		<ul class="title-area">
+            		    <li class="name">
+            		        <h1>
+            		            <a href="/">
+            		                {{cookiecutter.project_name}}
+            		            </a>
+            		        </h1>
+            		    </li>
+            		    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+            		</ul>
+        	        <section class="top-bar-section">
+        	        	<ul class="right">
+    			          {% block nav %}
+    			              {% include "_navbar.html" %}
+    			          {% endblock %}
+        	        	</ul>
+        	        </section>
+            </nav>
+        </div>
+    {% endblock %}
+
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+    
+    <footer>
+        <div class="row">
+            {% block footer %}
+                {% include "_footer.html" %}
+            {% endblock %}
+        </div>
+    </footer>
+    
+    {% block javascript %}
+      <script src="{% static 'js/vendor/jquery.js' %}"></script>
+      <script src="{% static 'js/foundation.min.js' %}"></script>
+      <script>
+        $(document).foundation();
+      </script>
+      
+      <script src="{% static 'js/site/klass.min.js' %}"></script>
+      <script src="{% static 'js/site/site_js.js' %}"></script>
+    {% endblock %}
+  </body>
+</html>

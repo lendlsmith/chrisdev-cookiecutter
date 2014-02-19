@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load foundation_tags %}
+
+{% block title %}User: {{ user.username }}{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="large-6 large-centered columns">
+            <div class="panel radius">
+                <h3>User: {{ user.username }}</h3>
+                <form class="form-horizontal" method="post" action="{% url 'users:update' %}">
+                    {% csrf_token %}
+                    {{ form|as_foundation }}
+                    <div class="control-group">
+                        <div class="controls">
+                            <button type="submit" class="tiny radius">Update</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,34 @@
+Code Contributors
+=================
+
+Daniel Greenfeld*
+a7p
+Lukas Klein
+Ben Lopatin
+Bouke Haarsma
+Agam Dua
+Vitaly Babiy
+Jim Munro*
+Tom Offermann
+Lyla Fischer
+Taylor Baldwin
+Chris Curvey (@ccurvey)
+Fábio C. Barrionuevo da Luz (@luzfcb)
+Saurabh Kumar
+Ashley Camba
+Yaroslav Halchenko
+Pablo / @oubiga
+Tom Atkins / @knitatoms
+Julio Castillo / @juliocc
+
+* Possesses commit rights
+
+Special Thanks
+==============
+
+The following haven't provided code directly, but have provided guidance and advice.
+
+Audrey Roy (cookiecutter)
+Jannis Leidel (django-configurations)
+Nate Aune
+Barry Morrison

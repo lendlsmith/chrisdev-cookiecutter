@@ -1,0 +1,28 @@
+body {background: #f9f9f9;}
+
+p, li {font-size: 14px;}
+
+#content {padding-top: 20px;padding-bottom: 20px;min-height:600px;}
+
+i {padding-right: 5px;}
+
+li.social {list-style: none;padding-top: 8px;text-align: center;}
+.fc-webicon.medium {height: 25px;width: 25px;}
+
+/*---FOOTER---*/
+
+footer {background: #646464;padding: 20px 10px 0;list-style: none;margin-top: -10px;}
+footer ul {margin-left: 0;}
+footer li {list-style: none;font-size: 12px;}
+footer p {margin-bottom: 2px;padding-bottom: 5px;font-size: 13px;text-align: center;}
+footer li, footer p {color: #fff;}
+footer h5 {margin-top: 0px;margin-bottom: 6px;font-size: 15px;color: #fff;}
+footer hr {margin-top: 0px;margin-bottom: 4px;}
+footer a {color: #fff;}
+footer a:hover {color: #fff; text-decoration: underline;}
+
+/*---END FOOTER---*/
+
+span.verified {color: #2ecc71; float: right; padding-left: 12px;}
+span.unverified {color: #f04124; float: right; padding-left: 12px;}
+span.primary {color: #3498db; float: right;}

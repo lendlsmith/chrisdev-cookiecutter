@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}Members{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="large-6 large-centered columns">
+            <div class="panel radius">
+                {% if user.is_staff %}
+                    <h3>Users</h3>
+                    <div class="list-group">
+                        {% for user in user_list %}
+                            <a href="{% url 'users:detail' user.username %}" class="list-group-item">
+                                <h4 class="list-group-item-heading">{{ user.username }} - {{ user.first_name }} {{ user.last_name }}</h4>
+                                <p class="list-group-item-text">{{ maker.tagline }}</p>
+                            </a>
+                        {% endfor %}
+                    </div>
+                 {% else %}
+                     <h4 style="text-align: center;">Page Not Found</h4>
+                         <div class="large-8 large-centered columns">
+                         	<img src="{{STATIC_URL}}images/404.png" >
+                         </div>
+                     <h5 style="text-align: center;">Sorry we cannot find the page you are looking for.</h5>
+                     <h6 style="text-align: center;">Click <a href="{% url 'users:detail' request.user.username  %}" style="color: #3498db;">here</a> to return to your profile.</h6>
+                 {% endif %}
+             </div>
+        </div>
+    </div>
+{% endblock %}

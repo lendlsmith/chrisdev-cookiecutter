@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block head_title %}Site is Temporarily Down{% endblock %}
+
+{% block content %}
+    <div class="large-8 large-centered columns" style="text-align: center;">
+        <h3>Ooops!!!</h3>
+        	<div class="large-8 large-centered columns">
+        		<img src="{{STATIC_URL}}images/500.png" style="margin-bottom: 30px;">
+        	</div>
+        <h4>There was a problem serving the requested page</h4>
+        <p>We have been notified of the problem and will try our best to make sure it does not happen again</p>
+    </div>
+{% endblock %}

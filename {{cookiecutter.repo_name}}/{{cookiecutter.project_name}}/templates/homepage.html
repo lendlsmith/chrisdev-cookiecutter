@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+	 <div class="row" style="margin-top: 15px;">
+	     <div class="large-12 columns">
+	         <div class="hide-for-small">
+	             <div id="featured">
+	                 <img src="http://placehold.it/1000x400&text=Slide Image" alt="slide image">
+	             </div>
+	         </div>
+
+	         <div class="row">
+	             <div class="small-12 show-for-small"><br>
+	                 <img src="http://placehold.it/1000x600&text=For Small Screens" />
+	             </div>
+	         </div>
+	     </div>
+	 </div>
+	 
+	 <br>
+	
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="row">
+                <div class="large-3 small-6 columns">
+                    <img src="http://placehold.it/250x250&text=Thumbnail" />
+                    <h6 class="panel">Description</h6>
+                </div>
+                
+                <div class="large-3 small-6 columns">
+                    <img src="http://placehold.it/250x250&text=Thumbnail" />
+                    <h6 class="panel">Description</h6>
+                </div>
+                
+                <div class="large-3 small-6 columns">
+                    <img src="http://placehold.it/250x250&text=Thumbnail" />
+                    <h6 class="panel">Description</h6>
+                </div>
+                
+                <div class="large-3 small-6 columns">
+                    <img src="http://placehold.it/250x250&text=Thumbnail" />
+                    <h6 class="panel">Description</h6>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+	
+<div class="row">
+    <div class="large-12 columns">
+        <div class="row">
+            <div class="large-8 columns">
+                <div class="panel radius">
+                    <div class="row">
+                        <div class="large-6 small-6 columns">
+                            <h4>Header</h4>
+                            <h5 class="subheader">Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Donec dignissim nibh fermentum odio ornare sagittis.</h5>
+
+                            <div class="show-for-small" align="center">
+                                <a href="#" class="small radius button">Call To Action!</a><br>
+                                <a href="#" class="small radius button">Call To Action!</a>
+                            </div>
+                        </div>
+                        
+                        <div class="large-6 small-6 columns">
+                            <p>Suspendisse ultrices ornare tempor. Aenean eget ultricies libero. Phasellus non ipsum eros. Vivamus at dignissim massa. Aenean dolor libero, blandit quis interdum et, malesuada nec ligula. Nullam erat erat, eleifend sed pulvinar ac.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="large-4 columns hide-for-small">
+                <a class="small button expand radius" href="{% url 'account_signup' %}"><i class="fi-page-edit"></i>{% trans "Sign Up" %}</a>
+                <a class="small button expand radius" href="{% url 'account_login' %}"><i class="fi-page-edit"></i>{% trans "Log In" %}</a>
+            </div>
+        </div>
+    </div>
+</div>       	  	
+{% endblock content %}
