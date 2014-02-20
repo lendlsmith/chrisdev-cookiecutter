@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 
+{% block extra_head %}
+    <meta name="keywords" content="{{ keywords }}" />
+    <meta name="description" content="{{ description }}" />
+{% endblock %}
+
 {% block head_title %}{{flatpage.title}}{% endblock %}
 
 {% block content %}

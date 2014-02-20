@@ -41,7 +41,7 @@ class Article(models.Model):
     """Article model."""
     title = models.CharField(_('title'), max_length=200)
     slug = models.SlugField(_('slug'), unique_for_date='published')
-    author = models.ForeignKey(User, null=True)
+    #author = models.ForeignKey(User, null=True)
 
     section = models.ForeignKey(Section, related_name="articles",
                                 blank=True, null=True)
@@ -118,7 +118,7 @@ class Revision(models.Model):
 
     content = models.TextField()
 
-    author = models.ForeignKey(User, related_name="article_revisions")
+    #author = models.ForeignKey(User, related_name="article_revisions")
 
     updated = models.DateTimeField(default=datetime.now, editable=False)
     published = models.DateTimeField(null=True, blank=True)
