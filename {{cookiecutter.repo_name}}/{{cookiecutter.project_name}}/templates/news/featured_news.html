@@ -1,0 +1,9 @@
+{% latest_news_articles 3 as latest_articles_list %}
+	{% for article in latest_articles_list %}
+  	<h6 class="subheader"><a href="{{ article.get_absolute_url }}">{{ article.title}}</a></h6>
+    <li><strong>{{ article.published|date:"Y F d" }}</strong></li>
+    
+    {{article.summary_html|safe|slice:":75"}}...
+	<p><a href="{{ article.get_absolute_url }}" class="button small round">Read More &raquo;</a></p>
+    <hr>
+{% endfor %} 

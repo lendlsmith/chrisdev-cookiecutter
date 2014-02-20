@@ -1,0 +1,5 @@
+<ul>
+  {% for d in dates reversed %}
+ <li><a href="{% url news_index %}{{ d|date:"Y/b" }}/">{{ d|date:"F Y" }}</a></li>
+  {% endfor %}
+</ul>

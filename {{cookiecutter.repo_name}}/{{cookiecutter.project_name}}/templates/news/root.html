@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load news_tags %}
+{% load i18n %}
+{% load generic_flatblocks %}
+{% load markup %}
+
+{% block extra_head %}
+    <link rel="alternate" type="application/rss+xml" href="{% url "news_feed" %}" title="All Topics"/>
+        {% for section in section_list %}
+            <link rel="alternate" type="application/rss+xml" href="{% url "news_section_feed" section.slug %}" title="{{ section.slug }}" />
+        {% endfor %}
+{% endblock %}
+
+{% block head_title %}{% trans "News" %}{% endblock %}
+
+{% block content %}
+	<div class="row">
+	    <div id="blog" class="large-8 columns">
+	    	<h2>{% block news_title %}{% endblock %}</h2>
+	        {% block news_content %}{% endblock %}
+	    </div>
+
+	    <div id="news_sidebar" class="hide-for-small large-4 columns">
+			<h5>Sections</h5>
+			{% render_section_list %}
+   		</div>
+
+	</div>
+
+	{% block news_pagination %}
+	    {% if is_paginated %}
+		    <div id="pages" class="page_without_others">
+		        {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ page_obj.number }} of {{ paginator.num_pages }}
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">next</a>
+                {% endif %}
+		    </div>
+	    {% endif %}
+	{% endblock %}
+
+{% endblock %}

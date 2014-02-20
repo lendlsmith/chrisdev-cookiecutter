@@ -38,14 +38,16 @@ class Common(Configuration):
     	#'filer',
         'frontendadmin',
         'markitup',
-        'south',   
+        'south',
+        'taggit',  
     )
 
     LOCAL_APPS = (
         'users',
         'utils',
         #'photos',
-        #'slider',   
+        #'slider',
+        #'news',   
     )
 
     INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

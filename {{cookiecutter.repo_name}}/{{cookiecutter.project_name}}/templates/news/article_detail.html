@@ -1,0 +1,9 @@
+{% extends "news/root.html" %}
+{% block head_title %}{{object.title}}{% endblock %}
+{% load news_tags %}
+
+{% block news_content %}
+	<h4>{{object.title}}</h4>
+	<p><strong>{{ article.published|date:"Y F d" }}</strong></p>
+ 	{{object.content_html|safe}}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "news/root.html" %}
+{% load news_tags %}
+{% load i18n %}
+
+{% block head_title %}News Sections{% endblock %}
+
+{% block news_title %}News Sections{% endblock %}
+
+{% block news_content %}
+    <h1>{{ section_list }}</h1>
+	<div class="large-12 columns">
+		{% for section in section_list  %}
+		  	<h4><a href="{{ section.get_absolute_url }}">{{section.title}}</a></h4>
+		{% endfor %}
+	</div>
+{% endblock %}

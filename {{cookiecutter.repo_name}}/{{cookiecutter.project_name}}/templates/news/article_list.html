@@ -1,0 +1,20 @@
+{% extends "news/root.html" %}
+{% load markup news_tags %}
+{% load i18n %}
+{% load thumbnail %}
+
+{% block head_title %}{% trans "News" %}{% endblock %}
+
+{% block news_content %}
+	<h3> Latest News </h3>
+		{% for article in object_list  %}
+		  	<h4><a href="{{ article.get_absolute_url }}">{{article.title}}</a></h4>
+		  	<p><strong>{{ article.published|date:"Y F d" }}</strong></p>
+	
+			{{article.summary_html|safe}}
+	
+		    <a href="{{ article.get_absolute_url }}" class="button small radius">Read More &raquo;</a>
+			
+			<hr>
+		{% endfor %}
+{% endblock %}

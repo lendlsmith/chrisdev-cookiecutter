@@ -1,0 +1,28 @@
+{% extends "news/root.html" %}
+
+{% block head_title %}News{% if category%} - {{category.title}}{% endif %}{% endblock %}
+{% load markup %}
+{% load news_tags %}
+
+{% block news_content %}
+	<h3>News<span>&raquo;</span> {{category.title}}</h3>
+		{% for post in object_list %}	    
+			<h4><a href="{{ post.get_absolute_url }}">{{post.title}}</a></h4>
+			<p><strong>{{ post.publish|date:"Y F d" }}</strong></p>
+			
+			{{post.tease|markdown|safe}}
+			
+			<a href="{{ article.get_absolute_url }}" class="button small radius">Read More &raquo;</a>
+	    	
+	    	<hr>	 
+	    {% endfor %}
+{% endblock %}
+
+{% block news_pagination %}
+	{% if is_paginated %}
+		<div id="pages" class="page_without_others">
+		    {% if has_previous %}<a href="?page={{previous}}" class="prev">Previous</a>{% else %}<a href="#" class="prev">&nbsp;</a>{% endif %} 
+		    {% if has_next %} <a href="?page={{next}}" class="next">Next</a>{% endif %}
+		</div>
+	{% endif %}
+{% endblock %}
