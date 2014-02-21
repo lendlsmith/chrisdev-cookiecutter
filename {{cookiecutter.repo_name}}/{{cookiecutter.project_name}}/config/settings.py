@@ -35,7 +35,7 @@ class Common(Configuration):
     	'django_generic_flatblocks',
     	'easy_thumbnails',
     	#'flatpages_filer',
-    	'filer',
+    	#'filer',
         'frontendadmin',
         'markitup',
         'south',
