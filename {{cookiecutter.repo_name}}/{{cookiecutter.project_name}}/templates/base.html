@@ -3,7 +3,7 @@
 <html lang="en" ng-app>
   <head>
     <meta charset="utf-8">
-    <title>{% block title %}{{ cookiecutter.project_name }}{% endblock title %}</title>
+    <title>{% block title %}{{ cookiecutter.project_name }}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -14,11 +14,10 @@
     <![endif]-->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
 
-    {% block css %}
     <link href="{% static 'css/foundation.css' %}" rel="stylesheet">
     <link href="{% static 'css/foundation-icons.css' %}" rel="stylesheet">
     <link href="{% static 'css/site/site_styles.css' %}" rel="stylesheet">
-    {% endblock %}
+
     <script src="{% static 'js/vendor/modernizr.js' %}"></script>
   </head>
 
@@ -41,22 +40,22 @@
         	        	<ul class="right">
     			          {% block nav %}
     			              {% include "_navbar.html" %}
-    			          {% endblock %}
+    			          {% endblock nav %}
         	        	</ul>
         	        </section>
             </nav>
         </div>
-    {% endblock %}
+    {% endblock topbar %}
 
     <div id="content">
-        {% block content %}{% endblock %}
+        {% block content %}{% endblock content %}
     </div>
     
     <footer>
         <div class="row">
             {% block footer %}
                 {% include "_footer.html" %}
-            {% endblock %}
+            {% endblock footer %}
         </div>
     </footer>
     
@@ -69,6 +68,6 @@
       
       <script src="{% static 'js/site/klass.min.js' %}"></script>
       <script src="{% static 'js/site/site_js.js' %}"></script>
-    {% endblock %}
+    {% endblock javascript %}
   </body>
 </html>
