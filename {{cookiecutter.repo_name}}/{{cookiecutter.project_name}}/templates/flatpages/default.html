@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% raw %}{% extends "base.html" %}
 
 {% block extra_head %}
     <meta name="keywords" content="{{ keywords }}" />
@@ -12,4 +12,4 @@
 		 <h4>{{flatpage.title}}</h4>
 	     {{flatpage.content|safe}}
 	</div>
-{% endblock %}
+{% endblock %}{% endraw %}

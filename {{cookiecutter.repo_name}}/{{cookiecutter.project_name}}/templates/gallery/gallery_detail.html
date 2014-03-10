@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% raw %}{% extends "base.html" %}
 {% load thumbnail %}
 
 {% block head_title %}{{block.super}}{{object.name }}{% endblock %}
@@ -19,4 +19,4 @@
 				</ul>
 			</div>
 	</div>
-{% endblock %}
+{% endblock %}{% endraw %}

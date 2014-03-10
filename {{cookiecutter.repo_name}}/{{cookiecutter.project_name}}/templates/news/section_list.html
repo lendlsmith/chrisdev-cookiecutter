@@ -1,4 +1,4 @@
-{% extends "news/root.html" %}
+{% raw %}{% extends "news/root.html" %}
 {% load news_tags %}
 {% load i18n %}
 
@@ -13,4 +13,4 @@
 		  	<h4><a href="{{ section.get_absolute_url }}">{{section.title}}</a></h4>
 		{% endfor %}
 	</div>
-{% endblock %}
+{% endblock %}{% endraw %}
