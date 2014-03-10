@@ -1,3 +1,4 @@
+{% raw %}
 {% extends "account/base.html" %}
 
 {% load url from future %}
@@ -6,12 +7,13 @@
 {% block head_title %}{% trans "Sign Up Closed" %}{% endblock %}
 
 {% block content %}
-    <div class="row">
-        <div class="large-6 large-centered columns">
-            <div class="panel radius">
-                <h3>{% trans "Sign Up Closed" %}</h3>
-                <p>{% trans "We are sorry, but the sign up is currently closed." %}</p>
-            </div>
+<div class="row">
+    <div class="large-6 large-centered columns">
+        <div class="panel radius">
+            <h3>{% trans "Sign Up Closed" %}</h3>
+            <p>{% trans "We are sorry, but the sign up is currently closed." %}</p>
         </div>
     </div>
+</div>
 {% endblock %}
+{% endraw %}

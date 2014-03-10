@@ -1,5 +1,4 @@
-
-{% load foundation_tags %}
+{% raw %}{% load foundation_tags %}
 {% if field.is_hidden %}
     {{ field }}
 {% else %}
@@ -30,4 +29,4 @@
 
         {% endif %}
     {% endif %}
-{% endif %}
+    {% endif %}{% endraw %}

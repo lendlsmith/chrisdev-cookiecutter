@@ -1,3 +1,4 @@
+{% raw %}
 {% load frontendadmin_tags %}
 
 {% if user.is_staff %}
@@ -19,4 +20,4 @@
 
 {% if object.url %}
 	<a href="{{object.url}}" style="float: right;" class="button small radius">Read More &raquo;</a>
-{% endif %}
+    {% endif %}{% endraw %}

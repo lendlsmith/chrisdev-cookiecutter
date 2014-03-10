@@ -1,3 +1,4 @@
+{% raw %}
 from django.template import Context
 from django.template.loader import get_template
 from django import template
@@ -26,3 +27,5 @@ def render_field(field):
 @register.filter(name='is_checkbox')
 def is_checkbox(field):
     return field.field.widget.__class__.__name__ == CheckboxInput().__class__.__name__
+
+{% endraw %}

@@ -1,4 +1,4 @@
-{% extends "news/root.html" %}
+{% raw %}{% extends "news/root.html" %}
 
 {% block head_title %}News -{{section.title}}{% endblock %}
 {% load markup %}
@@ -26,4 +26,4 @@
 		    {% if has_next %} <a href="?page={{next}}" class="next">Next</a>{% endif %}
 		</div>
 	{% endif %}
-{% endblock %}
+{% endblock %}{% endraw %}

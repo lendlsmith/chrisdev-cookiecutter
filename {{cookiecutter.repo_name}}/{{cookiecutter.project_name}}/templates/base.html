@@ -1,4 +1,4 @@
-{% load staticfiles i18n %}
+{% raw %}{% load staticfiles i18n %}
 
 <html lang="en" ng-app>
   <head>
@@ -29,7 +29,7 @@
             		    <li class="name">
             		        <h1>
             		            <a href="/">
-            		                {{cookiecutter.project_name}}
+                                    {% endraw %}{{ cookiecutter.project_name }}{% raw %}
             		            </a>
             		        </h1>
             		    </li>
@@ -69,4 +69,4 @@
       <script src="{% static 'js/site/site_js.js' %}"></script>
     {% endblock %}
   </body>
-</html>
+</html>{% endraw %}
