@@ -4,16 +4,15 @@
 
 {% block content %}
 	<div class="large-4 large-centered columns">
-	    <div class="panel radius">      	        	        	       	    	   
-    	   <h5 style="text-align: center;">{{event.title}}</h5>
-    	   <h6>Event - {{ event.title }}</h6>
-    	   <h6>Location - {{ event.location }}</h6>
-    	   <h6>Date - {{ event.date }}</h6>
-    	   <h6>Time - {{ event.time }}</h6>
-    	   
-    	   {% if obj.details %}
-    	   <p>Details - <strong>{{ event.deatils }}</strong></p>
-    	   {% else %} {% endif %}
+	    <div class="panel radius">      	        	        	       	    	<h5 style="text-align: center;">{{event.title}}</h5>
+    	    <h6>Location - {{ event.location }}</h6>
+    	    <h6>Date - {{ event.date }}</h6>
+    	    <h6>Time - {{ event.time }}</h6>
+    	    {% if obj.details %}
+    	        <p>Details - <strong>{{ event.deatils }}</strong></p>
+    	    {% else %} 
+    	    
+    	    {% endif %}
     	</div>
 	</div>
 {% endblock %}
