@@ -22,6 +22,7 @@ urlpatterns = patterns('',
     # Apps
     url(r'^users/', include("users.urls", namespace="users")),
     url(r'^accounts/', include('allauth.urls')),
+    url(r'^events/', include('events.urls')),
     #url(r'^news/', include('news.urls')),
     #url(r'^photos/', include('photos.urls')),
     url(r'^slide/', include('slider.urls')),

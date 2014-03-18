@@ -1,14 +1,21 @@
 {% raw %}
-{% extends "site_base.html" %}
+{% extends "base.html" %}
 {% block head_title %}{{event.title}}{% endblock %}
-{% load markup %}
 
 {% block content %}
-	        	        	        	               			    
-	   <p style="margin-bottom: 20px;">{{event.title|markdown|safe}}</p>
-	   
-	   <h6 style="text-align: right; font-style: italic;"><strong>{{event.title}}</strong></h6>
-	
+	<div class="large-4 large-centered columns">
+	    <div class="panel radius">      	        	        	       	    	   
+    	   <h5 style="text-align: center;">{{event.title}}</h5>
+    	   <h6>Event - {{ event.title }}</h6>
+    	   <h6>Location - {{ event.location }}</h6>
+    	   <h6>Date - {{ event.date }}</h6>
+    	   <h6>Time - {{ event.time }}</h6>
+    	   
+    	   {% if obj.details %}
+    	   <p>Details - <strong>{{ event.deatils }}</strong></p>
+    	   {% else %} {% endif %}
+    	</div>
+	</div>
 {% endblock %}
 
 {% endraw %}
