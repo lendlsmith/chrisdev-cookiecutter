@@ -1,15 +1,14 @@
+{% raw %}
 {% extends "site_base.html" %}
-{% block head_title %}{{testimonial.name}}{% endblock %}
+{% block head_title %}{{event.title}}{% endblock %}
 {% load markup %}
 
-{% block article %}
+{% block content %}
 	        	        	        	               			    
-	   <p style="margin-bottom: 20px;">{{testimonial.testimonial|markdown|safe}}</p>
+	   <p style="margin-bottom: 20px;">{{event.title|markdown|safe}}</p>
 	   
-	   <h6 style="text-align: right; font-style: italic;"><strong>{{testimonial.name}}</strong></h6>
+	   <h6 style="text-align: right; font-style: italic;"><strong>{{event.title}}</strong></h6>
 	
 {% endblock %}
 
-{% block aside %}
-    {% include "_sidebar.html" %}
-{% endblock %}
+{% endraw %}

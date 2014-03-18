@@ -37,20 +37,3 @@ class EventTestCase(TestCase):
             )
             self.assertEquals(resp.status_code, 200)
             self.assertEquals(resp.context['object'].event, obj.event)
-
-
-#class EventTemplatetagTestCase(eventTestCase):
-#
-#    def render(self, tmpl, **context):
-#        t = template.Template(tmpl)
-#        return t.render(template.Context(context))
-#
-#    def test_get_events(self):
-#        res = self.render("{% load events_tags %} {% get_events featured=True as events %} {% for t in events %} {{ t }} {% endfor %}")
-#        qs = event.objects.filter(featured=True)
-#        self.assertEquals(len(res.split()), qs.count())
-#
-#        self.assertSetEqual(
-#            set(qs.values_list('name', flat=True)),
-#            set(res.split())
-#        )
