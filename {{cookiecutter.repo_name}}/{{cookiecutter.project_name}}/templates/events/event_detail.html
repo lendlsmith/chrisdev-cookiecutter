@@ -1,0 +1,15 @@
+{% extends "site_base.html" %}
+{% block head_title %}{{testimonial.name}}{% endblock %}
+{% load markup %}
+
+{% block article %}
+	        	        	        	               			    
+	   <p style="margin-bottom: 20px;">{{testimonial.testimonial|markdown|safe}}</p>
+	   
+	   <h6 style="text-align: right; font-style: italic;"><strong>{{testimonial.name}}</strong></h6>
+	
+{% endblock %}
+
+{% block aside %}
+    {% include "_sidebar.html" %}
+{% endblock %}

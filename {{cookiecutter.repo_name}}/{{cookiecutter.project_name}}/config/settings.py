@@ -45,6 +45,7 @@ class Common(Configuration):
     LOCAL_APPS = (
         'users',
         'utils',
+        'events',
         #'photos',
         #'slider',
         #'news',   
