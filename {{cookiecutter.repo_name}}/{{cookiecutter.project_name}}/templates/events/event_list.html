@@ -3,33 +3,61 @@
 {% block head_title %} Events {% endblock %}
 
 {% block content %}
-	<div class="row">
-		    {% if object_list %}
-		        
-		        <table>
-    	            <tr>
-    	                <th>Event</th>
-    	                <th>Location</th>
-    	                <th>Date</th>
-    	                <th>Time</th>
-    	            </tr>        			  
-	                {% for obj in object_list %}
-    	                <tr>
-    	                    <td>{{ obj.title }}</td>
-    	                    <td>{{ obj.location }}</td>
-    	                    <td>{{ obj.date }}</td>
-    	                    <td>{{ obj.time }}</td>
-    	                </tr>
-	                {% endfor %}
-	            </table>
-	            		        
-		    {% else %}
-		   	
-		   	    <div style="background-color:red">
-			       <p>Sorry No Testimonials Added!! </p>
-			    </div>
-		    
-		    {% endif %}
-	</div> 
+    <div id="calendar" class="panel radius">
+        <h4><i class="fi-calendar" style="color: #08C; font-size: 35px;"></i> Upcoming Events</h4>
+        <hr>
+            {% if upcoming_events %}
+                {% for obj in upcoming_events %}
+                     <div class="row">
+                        <div class="large-3 small-3 columns" style="text-align: center; border-right: 1px solid #CCC; padding-top: 5px;">
+                            <li class="date" style="margin-bottom: 8px;"><strong>{{ obj.date|date:"d F Y" }}</strong></li>
+                            <li class="date">{{ obj.time }}</li>
+                        </div>
+                        <div class="large-7 small-6 columns" style="border-right: 1px solid #CCC; padding-top: 5px;">
+                            <h6 class="list"><strong>{{ obj.title }}</strong></h6>
+                            <li class="list">{{ obj.location }}</li>
+                        </div>
+                        <div class="large-2 small-3 columns" style="text-align: center; padding-top: 15px;">
+                           <a href="{{ obj.get_absolute_url }}" class="button tiny radius" style="margin-bottom: 0px; padding: 6px 8px; font-size: 11px;">Event Details</a>
+                        </div>
+                    </div>
+                    <hr style="margin-bottom: 20px;">
+                {% endfor %}
+            
+            {% else %}
+            	
+            
+            {% endif %}
+            
+      </div>
+      
+      <div id="calendar" class="panel radius">
+          <h4><i class="fi-calendar" style="color: #08C; font-size: 35px;"></i> Recent Events</h4>
+          <hr>
+              {% if recent_events %}
+                  {% for obj in recent_events %}
+                       <div class="row">
+                          <div class="large-3 small-3 columns" style="text-align: center; border-right: 1px solid #CCC; padding-top: 5px;">
+                              <li class="date" style="margin-bottom: 8px;"><strong>{{ obj.date|date:"d F Y" }}</strong></li>
+                              <li class="date">{{ obj.time }}</li>
+                          </div>
+                          <div class="large-7 small-6 columns" style="border-right: 1px solid #CCC; padding-top: 5px;">
+                              <h6 class="list"><strong>{{ obj.title }}</strong></h6>
+                              <li class="list">{{ obj.location }}</li>
+                          </div>
+                          <div class="large-2 small-3 columns" style="text-align: center; padding-top: 15px;">
+                             <a href="{{ obj.get_absolute_url }}" class="button tiny radius" style="margin-bottom: 0px; padding: 6px 8px; font-size: 11px;">Event Details</a>
+                          </div>
+                      </div>
+                      <hr style="margin-bottom: 20px;">
+                  {% endfor %}
+              
+              {% else %}
+              	
+              
+              {% endif %}
+              
+        </div>
+
 {% endblock %}
 {% endraw %}

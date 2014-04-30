@@ -10,3 +10,8 @@ def get_events(featured=True, limit=5):
     if featured:
         qs = qs.filter(featured=True)
     return qs[:limit]
+
+@register.assignment_tag   
+def get_upcoming_events(featured=True, limit=3):
+    qs = Event.objects.upcoming_events()
+    return qs[:limit]

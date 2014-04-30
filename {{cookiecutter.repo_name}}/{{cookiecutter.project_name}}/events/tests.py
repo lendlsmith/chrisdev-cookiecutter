@@ -7,16 +7,30 @@ from django import template
 class EventTestCase(TestCase):
     def setUp(self):
         self.tes1 = Event.objects.get_or_create(
-            date='2000-12-12',
+            date='2002-12-12',
             time="12:00:00",
-            event="This is a test",
+            title="This is a test",
             location="ChrisDev Headquarters"
         )
 
         self.tes2 = Event.objects.get_or_create(
             date='2000-12-12',
             time="12:00:00",
-            event="This is a test",
+            title="This is a test",
+            location="ChrisDev Headquarters"
+        )
+        
+        Event.objects.get_or_create(
+            date='2015-12-12',
+            time="12:00:00",
+            title="This is a upcoming",
+            location="ChrisDev Headquarters"
+        )
+        
+        Event.objects.get_or_create(
+            date='2013-12-12',
+            time="12:00:00",
+            title="This is a past",
             location="ChrisDev Headquarters"
         )
 
@@ -36,4 +50,28 @@ class EventTestCase(TestCase):
                 reverse('event_detail', kwargs={'pk': obj.pk})
             )
             self.assertEquals(resp.status_code, 200)
-            self.assertEquals(resp.context['object'].event, obj.event)
+            self.assertEquals(resp.context['object'].title, obj.title)
+            
+    def test_upcoming(self):
+        self.assertEquals(Event.objects.upcoming_events().count(),1) 
+        
+    
+    def test_recent_past(self):
+        self.assertEquals(Event.objects.recent_past_events().count(),3)
+
+
+#class EventTemplatetagTestCase(eventTestCase):
+#
+#    def render(self, tmpl, **context):
+#        t = template.Template(tmpl)
+#        return t.render(template.Context(context))
+#
+#    def test_get_events(self):
+#        res = self.render("{% load events_tags %} {% get_events featured=True as events %} {% for t in events %} {{ t }} {% endfor %}")
+#        qs = event.objects.filter(featured=True)
+#        self.assertEquals(len(res.split()), qs.count())
+#
+#        self.assertSetEqual(
+#            set(qs.values_list('name', flat=True)),
+#            set(res.split())
+#        )

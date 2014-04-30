@@ -3,27 +3,30 @@
 {% block head_title %}{{event.title}}{% endblock %}
 
 {% block content %}
-	<div class="large-4 large-centered columns">
-	    <div class="panel radius">      	        	        	       	    	<h5 style="text-align: center;">{{event.title}}</h5>
-	      
-    	      {% if event.location %}
-    	          <h6>Location - {{ event.location }}</h6>
-    	      {% else %}
-    	      {% endif %}
-    	      
-    	      <h6>Date - {{ event.date }}</h6>
-    	      
-    	      {% if event.time %}
-    	          <h6>Time - {{ event.time }}</h6>
-    	      {% else %}
-    	      {% endif %}
-    	       
-    	      {% if event.description %}
-    	      <p><strong>Description</strong> - {{ event.description }}</p>
-    	      {% else %}
-    	      {% endif %}
-    	</div>
-	</div>
+	        	        	        	               			    
+	  	<div class="large-8 large-centered columns">
+	  	    <div class="panel radius">      	        	    	    	   
+	      	   <h5 style="text-align: center;">{{event.title}}</h5>
+	      	   
+	      	   {% if event.location %}
+	      	       <h6>Location - {{ event.location }}</h6>
+	      	   {% else %}
+	      	   {% endif %}
+	      	   
+	      	   <h6>Date - {{ event.date }}</h6>
+	      	   
+	      	   {% if event.time %}
+	      	       <h6>Time - {{ event.time }}</h6>
+	      	   {% else %}
+	      	   {% endif %}
+	      	    
+	      	   {% if event.description %}
+                 <p><strong>Description</strong> - {{ event.description }}</p>
+               {% else %}
+	      	   {% endif %}
+	      	</div>
+	  	</div>	  
+	
 {% endblock %}
 
 {% endraw %}

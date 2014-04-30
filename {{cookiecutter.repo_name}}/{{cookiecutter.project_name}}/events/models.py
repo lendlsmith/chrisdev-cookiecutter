@@ -1,4 +1,5 @@
 from django.db import models
+from events.managers import EventsManager
 from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse
 
@@ -10,6 +11,8 @@ class Event(models.Model):
     description=models.TextField(max_length=200, blank=True)
     
     featured = models.BooleanField(default=True)
+    
+    objects = EventsManager()
     
     def __unicode__(self):
         return u"{0}".format(self.title)
